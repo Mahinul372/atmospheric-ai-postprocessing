@@ -57,3 +57,10 @@ No model experiments or performance results have been produced.
 - **Leakage safeguard:** The 2024-09-27 Helene pairs have already been inspected for technical time/grid/QC checks, so the proposed policy excludes that event from a strictly untouched final test. The previous 2024-05-01 sample is also development/QC only. Freeze test dates/events before examining their MRMS values for modeling.
 - **Sources:** NOAA NWS Atlanta documented widespread heavy rainfall during Helene (September 24–27, 2024); NWS Charleston documented multi-day Debby rainfall in southeast Georgia (August 4–9, 2024) and Idalia impacts in southeast Georgia (August 2023). These event summaries inform the archive search, not a performance claim.
 - **Next:** Confirm HRRR/MRMS archive availability for short Debby and Idalia windows and a seeded background calendar sample; then fetch and validate the pairs before expanding the area or fitting a model.
+
+
+## 2026-11-03 — Candidate archive access check
+
+- Attempted read-only HTTP HEAD checks for the HRRR APCP index and matching MRMS hourly-QPE objects for short Debby (2024-08-05/06) and Idalia (2023-08-30/31) windows. The local Windows Python process was blocked at socket creation (`WinError 10013`) despite the public archives and event candidates being identified. No objects were downloaded and archive availability for those candidate windows remains unverified.
+- NWS event summaries were consulted only to form a procurement frame: Debby (2024-08-04–09), Helene (2024-09-24–27), and Idalia (2023-08-30 onward). They are not labels used for training or model selection. The existing Helene QC pairs remain excluded from any strictly untouched final-test event.
+- **Next:** Resume archive-key checks using an environment route with outbound HTTPS, then download only a bounded real sample and inspect its GRIB messages before expanding.
