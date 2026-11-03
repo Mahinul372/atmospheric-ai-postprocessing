@@ -1,0 +1,4 @@
+# Install in the project virtual environment. The model checkpoint is selected explicitly at runtime.
+numpy==2.3.3
+eccodes==2.50.0
+tabpfn==9.2.0
