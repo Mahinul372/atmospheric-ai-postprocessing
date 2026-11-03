@@ -1,0 +1,56 @@
+{
+  "sample_id": "2024-05-01T13:00:00Z_HRRR_f01_vs_MRMS_01H",
+  "scope": "Georgia-centered bounding box, not a state polygon",
+  "bbox_degrees": {
+    "south": 29.5,
+    "north": 35.5,
+    "west": -86.0,
+    "east": -80.0
+  },
+  "forecast_grid": {
+    "Ni": 1799,
+    "Nj": 1059,
+    "DxInMetres": 3000.0,
+    "DyInMetres": 3000.0,
+    "dataDate": 20240501,
+    "dataTime": 1200,
+    "validityDate": 20240501,
+    "validityTime": 1300,
+    "stepRange": "0-1"
+  },
+  "observation_grid": {
+    "Ni": 7000,
+    "Nj": 3500,
+    "gridType": "regular_ll",
+    "dataDate": 20240501,
+    "dataTime": 1300,
+    "iDirectionIncrementInDegrees": 0.01,
+    "jDirectionIncrementInDegrees": 0.01,
+    "latitudeOfFirstGridPointInDegrees": 54.995,
+    "longitudeOfFirstGridPointInDegrees": 230.005,
+    "iScansNegatively": 0,
+    "jScansPositively": 0,
+    "jPointsAreConsecutive": 0,
+    "alternativeRowScanning": 0
+  },
+  "method": "nearest MRMS regular-latitude/longitude grid point for each HRRR cell center; no areal averaging or interpolation",
+  "row_count": 42184,
+  "invalid_observation_points_dropped": 0,
+  "missing_sentinels_removed": "All negative MRMS values, including product missing/fill sentinels (-1/-3), were excluded.",
+  "hrrr_forecast_mm_equivalent_range": [
+    0.0,
+    5.385000228881836
+  ],
+  "mrms_mm_range": [
+    0.0,
+    4.699999809265137
+  ],
+  "nearest_grid_center_distance_km": {
+    "mean": 0.3929056559077198,
+    "max": 0.7312224275742818
+  },
+  "derived_file": "data\\interim\\sample\\ga_bbox_nearest_neighbor_20240501_1300.csv",
+  "derived_file_sha256": "c1acb1613c27b20e3d37f57cd03f2f6713d094bf539d08b1d8fc1d3473cfff01",
+  "source_manifest": "data/manifests/sample_20240501_1300.json",
+  "use_limit": "Alignment smoke test only; one valid time cannot support training, and nearest-neighbor values are not the final remapping choice."
+}
