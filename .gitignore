@@ -1,0 +1,32 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials
+.env
+.env.*
+!.env.example
+
+# Weather data and derived datasets stay local
+data/raw/**
+!data/raw/.gitkeep
+data/interim/**
+!data/interim/.gitkeep
+data/processed/**
+!data/processed/.gitkeep
+
+# Model weights and generated outputs
+models/**
+!models/.gitkeep
+results/metrics/**
+!results/metrics/.gitkeep
+results/figures/**
+!results/figures/.gitkeep
+results/predictions/**
+!results/predictions/.gitkeep
