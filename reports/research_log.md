@@ -33,3 +33,11 @@ No model experiments or performance results have been produced.
 - **Data:** Retrieved real 2024-09-27 HRRR f01/MRMS pairs at 00–01Z and 12–13Z. Both passed all six metadata/content checks. In a Georgia-centered bbox smoke check, all 42,184 selected MRMS locations were valid; MRMS wet fractions and maxima differed substantially between times, showing actual weather variability. These are QC summaries only, not skill results.
 - **Manifests:** `data/manifests/pair_20240927_00z.json` and `data/manifests/pair_20240927_12z.json` include source keys, range byte offsets, hashes, decoded metadata, periods, and check results.
 - **Next:** Extend validation to a modest multi-event sample, define a Georgia polygon and final spatial aggregation/remapping, and design date/event-level partitions before making an analysis dataset. CPU/RAM and license acceptance remain prerequisites to a TabPFN smoke load.
+
+
+## 2026-11-03 — Repository publication
+
+- **Repository:** Confirmed `Mahinul372/atmospheric-ai-postprocessing` exists on GitHub and is public, as the user requested.
+- **Published:** The remote main branch now contains the project README, `.gitignore`, configuration, requirements, feasibility and research logs, four real-data manifests, validation/download/matching utilities, and existing tests. Remote tree verification found no raw or interim weather files, processed arrays, checkpoints, virtual environment, or result artifacts.
+- **Local Git blocker:** The F: checkout has no commit or remote configured. Git read-only inspection works when using a per-command `safe.directory`, but `git add --dry-run` fails to create `.git/index.lock` with `Permission denied` because the checkout is owned by a different Windows sandbox identity. Local Git history synchronization remains pending resolution of that ACL/ownership mismatch.
+- **Scientific state:** No model has been fit, no test data has been used for model selection, and no skill score or claimed improvement exists.
