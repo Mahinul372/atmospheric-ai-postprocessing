@@ -41,3 +41,11 @@ No model experiments or performance results have been produced.
 - **Published:** The remote main branch now contains the project README, `.gitignore`, configuration, requirements, feasibility and research logs, four real-data manifests, validation/download/matching utilities, and existing tests. Remote tree verification found no raw or interim weather files, processed arrays, checkpoints, virtual environment, or result artifacts.
 - **Local Git blocker:** The F: checkout has no commit or remote configured. Git read-only inspection works when using a per-command `safe.directory`, but `git add --dry-run` fails to create `.git/index.lock` with `Permission denied` because the checkout is owned by a different Windows sandbox identity. Local Git history synchronization remains pending resolution of that ACL/ownership mismatch.
 - **Scientific state:** No model has been fit, no test data has been used for model selection, and no skill score or claimed improvement exists.
+
+
+## 2026-11-03 — Validation suite and official model-card recheck
+
+- **Tests:** Ran the existing metadata-only unit suite with the local project Python 3.13 environment: all 4 tests passed. These test accumulation-window logic; they do not measure forecast skill.
+- **TabPFN documentation:** Rechecked the official Prior Labs API and TabPFN-2.5 model card. The explicit version API remains `TabPFNRegressor.create_default_for_version(ModelVersion.V2_5)`. The model card confirms the default regression checkpoint `tabpfn-v2.5-regressor-v2.5_default.ckpt` is trained on synthetic data only, while separate `real` regression checkpoints use real-data fine-tuning. It describes TabPFN as an in-context-learning tabular transformer with intended support up to 50,000 samples and 2,000 features.
+- **License:** The current model card identifies `tabpfn-2.5-license-v1.1`; it allows research/testing and limited internal evaluation but prohibits commercial or production use. No license acceptance or checkpoint download was performed.
+- **Next:** Resolve the local F: checkout write ACL; choose and validate the final MRMS-to-HRRR remapping using actual grid coordinates; define whole-event train/validation/test partitions; then expand the real sample across multiple independent precipitation events. Do not begin model fitting before these steps.
