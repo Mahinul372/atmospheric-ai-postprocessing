@@ -1,0 +1,26 @@
+[project]
+name = "atmospheric-ai-postprocessing"
+version = "0.1.0"
+description = "Research prototype for HRRR precipitation post-processing with TabPFN-2.5"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "numpy==2.3.3",
+  "eccodes==2.50.0",
+  "tabpfn==9.2.0",
+]
+
+[project.optional-dependencies]
+plots = [
+  "matplotlib",
+  "cartopy",
+]
+test = [
+  "pytest",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
