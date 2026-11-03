@@ -1,0 +1,191 @@
+{
+  "sample_id": "2024-05-01T13:00:00Z_HRRR_f01_vs_MRMS_01H",
+  "temporal_match": {
+    "forecast_initialization_utc": "2024-05-01T12:00:00Z",
+    "forecast_lead_hours": 1,
+    "forecast_valid_time_utc": "2024-05-01T13:00:00Z",
+    "forecast_accumulation_start_utc": "2024-05-01T12:00:00Z",
+    "forecast_accumulation_end_utc": "2024-05-01T13:00:00Z",
+    "observation_accumulation_start_utc": "2024-05-01T12:00:00Z",
+    "observation_accumulation_end_utc": "2024-05-01T13:00:00Z",
+    "mrms_period_basis": "RadarOnly_QPE_01H accumulation is the preceding 60 minutes; timestamp is the valid/end time, per NOAA WDTD MRMS training material.",
+    "periods_match": true
+  },
+  "sources": {
+    "hrrr": {
+      "bucket": "s3://noaa-hrrr-bdp-pds",
+      "object": "hrrr.20240501/conus/hrrr.t12z.wrfsfcf01.grib2",
+      "index_object": "hrrr.20240501/conus/hrrr.t12z.wrfsfcf01.grib2.idx",
+      "byte_range_inclusive": [
+        59755654,
+        60073889
+      ],
+      "local_file": "data/raw/sample/hrrr.t12z.wrfsfcf01.APCP.grib2",
+      "sha256": "e85ae8ad04952af5b4adc2f7859066a8312a0edce2719554f8fd1c0d41590e6a",
+      "bytes": 318236,
+      "metadata": {
+        "discipline": 0,
+        "parameterCategory": 1,
+        "parameterNumber": 8,
+        "shortName": "tp",
+        "name": "Total Precipitation",
+        "units": "kg m**-2",
+        "typeOfLevel": "surface",
+        "dataDate": 20240501,
+        "dataTime": 1200,
+        "validityDate": 20240501,
+        "validityTime": 1300,
+        "stepType": "accum",
+        "stepRange": "0-1",
+        "startStep": 0,
+        "endStep": 1,
+        "gridType": "lambert",
+        "Ni": 1799,
+        "Nj": 1059,
+        "numberOfValues": 1905141,
+        "missingValue": 9999,
+        "latitudeOfFirstGridPointInDegrees": 21.138123,
+        "longitudeOfFirstGridPointInDegrees": 237.280472,
+        "DxInMetres": 3000.0,
+        "DyInMetres": 3000.0,
+        "iScansNegatively": 0,
+        "jScansPositively": 1,
+        "jPointsAreConsecutive": 0,
+        "alternativeRowScanning": 0,
+        "bitmapPresent": 0,
+        "referenceValue": 0.0,
+        "bitsPerValue": 15,
+        "productDefinitionTemplateNumber": 8
+      },
+      "values": {
+        "count": 1905141,
+        "negative_sentinel_count": 0,
+        "zero_count": 1634035,
+        "positive_count": 271106,
+        "minimum": 0.0,
+        "maximum": 32.89899826049805
+      },
+      "unit_interpretation": "kg m-2; numerically equivalent to mm liquid-water depth"
+    },
+    "mrms": {
+      "bucket": "s3://noaa-mrms-pds",
+      "object": "CONUS/RadarOnly_QPE_01H_00.00/20240501/MRMS_RadarOnly_QPE_01H_00.00_20240501-130000.grib2.gz",
+      "local_file": "data/raw/sample/MRMS_RadarOnly_QPE_01H_00.00_20240501-130000.grib2.gz",
+      "sha256": "e0d1245a7fbb070be2f9ae78f782cc296e061ea551edc1443a87c0268ac26dd7",
+      "bytes": 555574,
+      "decompressed_bytes": 592719,
+      "metadata": {
+        "discipline": 209,
+        "parameterCategory": 6,
+        "parameterNumber": 2,
+        "shortName": "unknown",
+        "name": "unknown",
+        "units": "unknown",
+        "typeOfLevel": "heightAboveSea",
+        "dataDate": 20240501,
+        "dataTime": 1300,
+        "validityDate": 20240501,
+        "validityTime": 1300,
+        "stepType": "instant",
+        "stepRange": "0m",
+        "startStep": "0m",
+        "endStep": "0m",
+        "gridType": "regular_ll",
+        "Ni": 7000,
+        "Nj": 3500,
+        "numberOfValues": 24500000,
+        "missingValue": 9999,
+        "latitudeOfFirstGridPointInDegrees": 54.995,
+        "longitudeOfFirstGridPointInDegrees": 230.005,
+        "latitudeOfLastGridPointInDegrees": 20.005001,
+        "longitudeOfLastGridPointInDegrees": 299.994998,
+        "iDirectionIncrementInDegrees": 0.01,
+        "jDirectionIncrementInDegrees": 0.01,
+        "iScansNegatively": 0,
+        "jScansPositively": 0,
+        "jPointsAreConsecutive": 0,
+        "alternativeRowScanning": 0,
+        "bitmapPresent": 0,
+        "referenceValue": -30.0,
+        "bitsPerValue": 16,
+        "productDefinitionTemplateNumber": 0
+      },
+      "values": {
+        "count": 24500000,
+        "negative_sentinel_count": 8261972,
+        "zero_count": 15343567,
+        "positive_count": 894461,
+        "minimum": -3.0,
+        "maximum": 81.4000015258789
+      },
+      "documented_unit": "mm",
+      "documented_missing_and_fill_values": [
+        -1,
+        -3
+      ],
+      "approximate_georgia_buffer": {
+        "bbox_degrees": {
+          "south": 29.5,
+          "north": 35.5,
+          "west": -86.0,
+          "east": -80.0
+        },
+        "array_slice_j_i": [
+          [
+            1949,
+            2550
+          ],
+          [
+            4399,
+            5000
+          ]
+        ],
+        "shape": [
+          601,
+          601
+        ],
+        "negative_sentinel_count": 0,
+        "valid_fraction": 1.0,
+        "maximum_valid_value_mm": 8.600000381469727,
+        "note": "Bounding-box diagnostic only; not a state polygon or final remapped dataset."
+      }
+    }
+  },
+  "spatial_alignment": {
+    "hrrr_grid": {
+      "gridType": "lambert",
+      "Ni": 1799,
+      "Nj": 1059,
+      "DxInMetres": 3000.0,
+      "DyInMetres": 3000.0,
+      "latitudeOfFirstGridPointInDegrees": 21.138123,
+      "longitudeOfFirstGridPointInDegrees": 237.280472
+    },
+    "mrms_grid": {
+      "gridType": "regular_ll",
+      "Ni": 7000,
+      "Nj": 3500,
+      "iDirectionIncrementInDegrees": 0.01,
+      "jDirectionIncrementInDegrees": 0.01,
+      "latitudeOfFirstGridPointInDegrees": 54.995,
+      "longitudeOfFirstGridPointInDegrees": 230.005,
+      "latitudeOfLastGridPointInDegrees": 20.005001,
+      "longitudeOfLastGridPointInDegrees": 299.994998
+    },
+    "same_grid": false,
+    "remapping_performed": false
+  },
+  "validation_checks": {
+    "HRRR_is_surface_total_precipitation": true,
+    "HRRR_is_one_hour_accumulation": true,
+    "MRMS_is_RadarOnly_QPE_01H": true,
+    "HRRR_and_MRMS_windows_match": true,
+    "grid_value_counts_match_metadata": true
+  },
+  "software": {
+    "python": "3.13.7",
+    "eccodes": "2.50.0",
+    "numpy": "2.3.3"
+  },
+  "not_model_training_data": true
+}
