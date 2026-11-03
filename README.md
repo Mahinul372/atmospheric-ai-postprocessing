@@ -54,7 +54,7 @@ Before inference, verify the official API and the exact checkpoint loaded, pin c
 
 ## Repository structure
 
-The repository contains the validation/download utilities, configuration, manifests, tests, and feasibility/research notes. The proposed leakage-safe grid/time protocol is in [reports/spatiotemporal_validation_protocol.md](reports/spatiotemporal_validation_protocol.md); its remapping and split choices remain proposals pending validation on actual grids. Weather data and model artifacts must not be committed.
+The repository contains the validation/download utilities, configuration, manifests, tests, and feasibility/research notes. The proposed leakage-safe grid/time protocol is in [reports/spatiotemporal_validation_protocol.md](reports/spatiotemporal_validation_protocol.md), and documented candidate event windows are listed in [reports/event_sampling_plan.md](reports/event_sampling_plan.md). Both are proposals pending archive checks and validation on actual grids; neither is a final split. Weather data and model artifacts must not be committed.
 
 ## Official model references
 
