@@ -40,7 +40,7 @@ Apply a nonnegative constraint if justified and documented. Compare raw HRRR, li
 
 The primary AI model is the pretrained **TabPFN-2.5 regression** model, explicitly selected with `TabPFNRegressor.create_default_for_version(ModelVersion.V2_5)`. The intended checkpoint is the synthetic-only default regression checkpoint `tabpfn-v2.5-regressor-v2.5_default.ckpt`. The model uses training examples as task-specific in-context information at prediction time; this experiment does not fine-tune transformer weights or train the transformer from scratch. No real-data-finetuned checkpoint is allowed in the primary experiment.
 
-Before inference, verify the official API and the exact checkpoint loaded, pin compatible versions, record the runtime configuration, and comply with the model's license. The project's current machine has 4 logical CPUs and approximately 3.4 GB total RAM; practical inference capacity is not yet established.
+Before inference, verify the official API and the exact checkpoint loaded, pin compatible versions, record the runtime configuration, and comply with the model's license. The official model card identifies TabPFN-2.5 weights as licensed under `tabpfn-2.5-license-v1.1`; it permits research/testing and limited internal evaluation but prohibits commercial or production use. The license has not been accepted through the project environment. The project's current machine has 4 logical CPUs and approximately 3.4 GB total RAM; practical inference capacity is not yet established.
 
 ## Scientific safeguards and limitations
 
