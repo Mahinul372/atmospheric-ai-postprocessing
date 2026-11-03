@@ -1,0 +1,52 @@
+project:
+  name: atmospheric-ai-postprocessing
+  region: Georgia, USA
+  status: milestone_2_data_validation
+
+forecast:
+  provider: NOAA HRRR
+  format: GRIB2
+  variable: APCP (Total Precipitation, surface)
+  lead_hours: 1
+  accumulation_hours: 1
+  sample_initialization_utc: '2024-05-01T12:00:00Z'
+  sample_valid_time_utc: '2024-05-01T13:00:00Z'
+
+observation:
+  provider: NOAA MRMS
+  product: RadarOnly_QPE_01H
+  format: GRIB2 (gzip compressed in archive)
+  accumulation_hours: 1
+  sample_valid_time_utc: '2024-05-01T13:00:00Z'
+  sample_accumulation_start_utc: '2024-05-01T12:00:00Z'
+  sample_accumulation_end_utc: '2024-05-01T13:00:00Z'
+
+matching:
+  target_grid: HRRR
+  validation_remapping: nearest_neighbor_for_smoke_test_only
+  final_remapping_method: null
+  unit: mm
+  target: observed_minus_forecast
+  temporal_split: whole_dates_and_events
+  test_observations_for_model_selection: false
+  sample_bbox_degrees: {south: 29.5, north: 35.5, west: -86.0, east: -80.0}
+  sample_bbox_is_georgia_polygon: false
+
+model:
+  package: tabpfn
+  package_version: 9.2.0
+  estimator: TabPFNRegressor
+  model_version: V2_5
+  expected_checkpoint: tabpfn-v2.5-regressor-v2.5_default.ckpt
+  checkpoint_training: synthetic_only
+  allow_real_data_finetuned_checkpoint: false
+  train_transformer_weights: false
+  max_rows_documented: 50000
+  max_features_documented: 2000
+  installed_or_loaded: false
+  note: Local RAM is 3.4 GB total; CPU inference feasibility requires a small licensed smoke test.
+
+sample:
+  dates: ['2024-05-01']
+  raw_sample_only: true
+  model_training_rows: 0
