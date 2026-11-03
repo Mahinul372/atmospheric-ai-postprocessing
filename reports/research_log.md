@@ -49,3 +49,11 @@ No model experiments or performance results have been produced.
 - **TabPFN documentation:** Rechecked the official Prior Labs API and TabPFN-2.5 model card. The explicit version API remains `TabPFNRegressor.create_default_for_version(ModelVersion.V2_5)`. The model card confirms the default regression checkpoint `tabpfn-v2.5-regressor-v2.5_default.ckpt` is trained on synthetic data only, while separate `real` regression checkpoints use real-data fine-tuning. It describes TabPFN as an in-context-learning tabular transformer with intended support up to 50,000 samples and 2,000 features.
 - **License:** The current model card identifies `tabpfn-2.5-license-v1.1`; it allows research/testing and limited internal evaluation but prohibits commercial or production use. No license acceptance or checkpoint download was performed.
 - **Next:** Resolve the local F: checkout write ACL; choose and validate the final MRMS-to-HRRR remapping using actual grid coordinates; define whole-event train/validation/test partitions; then expand the real sample across multiple independent precipitation events. Do not begin model fitting before these steps.
+
+
+## 2026-11-03 — Candidate event sampling plan
+
+- **Completed:** Added `reports/event_sampling_plan.md` with NWS-documented Debby, Helene, and Idalia windows as archive-check candidates plus season-balanced background sampling. This is a procurement plan only; it does not create a final split or use model scores to select cases.
+- **Leakage safeguard:** The 2024-09-27 Helene pairs have already been inspected for technical time/grid/QC checks, so the proposed policy excludes that event from a strictly untouched final test. The previous 2024-05-01 sample is also development/QC only. Freeze test dates/events before examining their MRMS values for modeling.
+- **Sources:** NOAA NWS Atlanta documented widespread heavy rainfall during Helene (September 24–27, 2024); NWS Charleston documented multi-day Debby rainfall in southeast Georgia (August 4–9, 2024) and Idalia impacts in southeast Georgia (August 2023). These event summaries inform the archive search, not a performance claim.
+- **Next:** Confirm HRRR/MRMS archive availability for short Debby and Idalia windows and a seeded background calendar sample; then fetch and validate the pairs before expanding the area or fitting a model.
