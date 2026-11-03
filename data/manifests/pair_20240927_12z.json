@@ -1,0 +1,98 @@
+{
+  "initialization_utc": "2024-09-27T12:00:00Z",
+  "valid_time_utc": "2024-09-27T13:00:00Z",
+  "forecast_accumulation_utc": [
+    "2024-09-27T12:00:00Z",
+    "2024-09-27T13:00:00Z"
+  ],
+  "observation_accumulation_utc": [
+    "2024-09-27T12:00:00Z",
+    "2024-09-27T13:00:00Z"
+  ],
+  "hrrr_object": "hrrr.20240927/conus/hrrr.t12z.wrfsfcf01.grib2",
+  "hrrr_index_object": "hrrr.20240927/conus/hrrr.t12z.wrfsfcf01.grib2.idx",
+  "hrrr_index_apcp_line": "84:59651718:d=2024092712:APCP:surface:0-1 hour acc fcst:",
+  "hrrr_byte_range_inclusive": [
+    59651718,
+    60026876
+  ],
+  "hrrr_range_response": "bytes 59651718-60026876/144503609",
+  "hrrr_local_file": "data\\raw\\events\\20240927\\hrrr.t12z.wrfsfcf01.APCP.grib2",
+  "hrrr_sha256": "1c7a1c2bf7b65b48217234a2ab0194c027d6343181a7a6b478597f1d6ffd1361",
+  "hrrr_bytes": 375159,
+  "mrms_object": "CONUS/RadarOnly_QPE_01H_00.00/20240927/MRMS_RadarOnly_QPE_01H_00.00_20240927-130000.grib2.gz",
+  "mrms_local_file": "data\\raw\\events\\20240927\\MRMS_RadarOnly_QPE_01H_00.00_20240927-130000.grib2.gz",
+  "mrms_sha256": "4b9a1448a8cb12596f1eaf87463e07dedc4fb53c4e37d05fbc9cc8f117bbce23",
+  "mrms_bytes": 898644,
+  "period_alignment_basis": "HRRR APCP message is 0-1 hour accumulation; NOAA WDTD describes RadarOnly_QPE_01H as accumulated over previous 60 minutes, timestamped at valid/end time.",
+  "grib_validation": {
+    "checks": {
+      "forecast_field_is_surface_total_precip": true,
+      "forecast_window_is_zero_to_one_hour": true,
+      "observation_product_is_radaronly_qpe_01h": true,
+      "valid_time_matches_manifest": true,
+      "accumulation_windows_match": true,
+      "decoded_counts_match_grid_metadata": true
+    },
+    "hrrr_metadata": {
+      "discipline": 0,
+      "parameterCategory": 1,
+      "parameterNumber": 8,
+      "shortName": "tp",
+      "name": "Total Precipitation",
+      "units": "kg m**-2",
+      "typeOfLevel": "surface",
+      "dataDate": 20240927,
+      "dataTime": 1200,
+      "validityDate": 20240927,
+      "validityTime": 1300,
+      "stepType": "accum",
+      "stepRange": "0-1",
+      "startStep": 0,
+      "endStep": 1,
+      "gridType": "lambert",
+      "Ni": 1799,
+      "Nj": 1059,
+      "numberOfValues": 1905141,
+      "DxInMetres": 3000.0,
+      "DyInMetres": 3000.0
+    },
+    "mrms_metadata": {
+      "discipline": 209,
+      "parameterCategory": 6,
+      "parameterNumber": 2,
+      "shortName": "unknown",
+      "name": "unknown",
+      "units": "unknown",
+      "typeOfLevel": "heightAboveSea",
+      "dataDate": 20240927,
+      "dataTime": 1300,
+      "validityDate": 20240927,
+      "validityTime": 1300,
+      "stepType": "instant",
+      "stepRange": "0m",
+      "startStep": "0m",
+      "endStep": "0m",
+      "gridType": "regular_ll",
+      "Ni": 7000,
+      "Nj": 3500,
+      "numberOfValues": 24500000,
+      "iDirectionIncrementInDegrees": 0.01,
+      "jDirectionIncrementInDegrees": 0.01
+    },
+    "hrrr_values_min_max": [
+      0.0,
+      62.08000183105469
+    ],
+    "mrms_values_min_max_including_sentinels": [
+      -3.0,
+      152.0
+    ],
+    "mrms_negative_sentinel_count_full_conus": 8256225,
+    "decoded_mrms_path": "data\\interim\\events\\MRMS_RadarOnly_QPE_01H_00.00_20240927-130000.grib2",
+    "observation_window_derived_from_documented_previous_60_minute_product": [
+      "2024-09-27T12:00:00Z",
+      "2024-09-27T13:00:00Z"
+    ]
+  }
+}
